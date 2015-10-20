@@ -47,13 +47,13 @@
     
     [self.view addSubview:_tagListView];
 }
-
 ```
 
 ####添加一个或者多个标签
 ```objc
 - (IBAction)btnClick:(id)sender
 {
+    //多个标签的则需要以中文或者英文状态下的逗号进行分隔
     [_tagListView addTagTitle:@"new tag"];
 }
 ```
@@ -62,6 +62,7 @@
 ```objc
 - (IBAction)btnDelete:(id)sender
 {
+    //多个标签的则需要以中文或者英文状态下的逗号进行分隔
     [_tagListView deleteTagTitle:@"Foo"];
 }
 ```
