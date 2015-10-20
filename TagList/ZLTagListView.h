@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#define kDefaultFontSize 15.0f
+#define kDefaultTagBgColor [UIColor lightGrayColor]
+#define kDefaultTagTitleColor [UIColor blackColor]
+
 @interface ZLTagListView : UIView
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-
-@property (nonatomic, strong) UIColor *bgColor;
-@property (nonatomic, strong) UIColor *textColor;
+@property (nonatomic, assign) CGFloat tagFontSize;
+@property (nonatomic, strong) UIColor *tagBgColor;
+@property (nonatomic, strong) UIColor *tagTitleColor;
 @property (nonatomic, copy) void (^ClickAction)(NSString *title);
 /**
  * @brief 初始化方法

@@ -110,9 +110,10 @@
 {
     TagListViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TagListViewCell" forIndexPath:indexPath];
     
+    cell.labTitle.font = [UIFont systemFontOfSize:self.tagFontSize>0?self.tagFontSize:kDefaultFontSize];
     cell.labTitle.text = _arrayTitles[indexPath.row];
-    cell.labTitle.textColor = self.textColor ? self.textColor : [UIColor blackColor];
-    cell.labTitle.backgroundColor = self.bgColor ? self.bgColor : [UIColor lightGrayColor];
+    cell.labTitle.textColor = self.tagTitleColor ? self.tagTitleColor : kDefaultTagTitleColor;
+    cell.labTitle.backgroundColor = self.tagBgColor ? self.tagBgColor : kDefaultTagBgColor;
     
     return cell;
 }
@@ -128,9 +129,13 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *title = _arrayTitles[indexPath.row];
-    CGSize size = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, 30) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:20]} context:nil].size;
+    CGSize size = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, 30) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:self.tagFontSize>0?self.tagFontSize+5:kDefaultFontSize+5]} context:nil].size;
     if (size.width < 20) {
         size.width = 20;
+    }
+    
+    if (size.width > self.collectionView.frame.size.width - 10) {
+        size.width = self.collectionView.frame.size.width - 10;
     }
     return size;
 }

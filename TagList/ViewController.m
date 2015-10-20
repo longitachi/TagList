@@ -31,8 +31,8 @@
 {
     _tagListView = [[ZLTagListView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth - 40, 10) tagTitles:@"Foo,Tag Label 1,Tag Label 2"];
     _tagListView.center = self.view.center;
-    _tagListView.bgColor = [UIColor colorWithRed:0.18 green:0.64 blue:0.37 alpha:1];
-    _tagListView.textColor = [UIColor whiteColor];
+    _tagListView.tagBgColor = [UIColor colorWithRed:0.18 green:0.64 blue:0.37 alpha:1];
+    _tagListView.tagTitleColor = [UIColor whiteColor];
     
     typeof(ViewController) *weakSelf = self;
     [_tagListView setClickAction:^(NSString *title) {
