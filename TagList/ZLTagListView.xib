@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZLTagListView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DKh-aG-4Z1">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                    <animations/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lgc-om-hNg">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="juA-yL-peD"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="9Yf-Vy-AJO"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="DKh-aG-4Z1" secondAttribute="bottom" id="IyW-hf-AqK"/>
+                <constraint firstItem="DKh-aG-4Z1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jip-uc-qwE"/>
+                <constraint firstItem="DKh-aG-4Z1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ThR-FA-huE"/>
+                <constraint firstAttribute="trailing" secondItem="DKh-aG-4Z1" secondAttribute="trailing" id="yCX-vr-OUG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="DKh-aG-4Z1" id="ePE-dV-0Qy"/>
+            </connections>
+            <point key="canvasLocation" x="312" y="267"/>
+        </view>
+    </objects>
+</document>
