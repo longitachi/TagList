@@ -15,10 +15,10 @@
 		FDCE74A31BD67DE8009A592B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCE74A11BD67DE8009A592B /* LaunchScreen.storyboard */; };
 		FDCE74AE1BD67DE8009A592B /* TagListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCE74AD1BD67DE8009A592B /* TagListTests.m */; };
 		FDCE74B91BD67DE8009A592B /* TagListUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCE74B81BD67DE8009A592B /* TagListUITests.m */; };
-		FDCE74C81BD67E1D009A592B /* ZLTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCE74C71BD67E1D009A592B /* ZLTagListView.m */; settings = {ASSET_TAGS = (); }; };
-		FDCE74CA1BD67E45009A592B /* ZLTagListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDCE74C91BD67E45009A592B /* ZLTagListView.xib */; settings = {ASSET_TAGS = (); }; };
-		FDCE74CF1BD67EE4009A592B /* TagListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCE74CD1BD67EE4009A592B /* TagListViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		FDCE74D01BD67EE4009A592B /* TagListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDCE74CE1BD67EE4009A592B /* TagListViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		FDCE74D71BD69DD4009A592B /* TagListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCE74D21BD69DD4009A592B /* TagListViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		FDCE74D81BD69DD4009A592B /* TagListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDCE74D31BD69DD4009A592B /* TagListViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		FDCE74D91BD69DD4009A592B /* ZLTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCE74D51BD69DD4009A592B /* ZLTagListView.m */; settings = {ASSET_TAGS = (); }; };
+		FDCE74DA1BD69DD4009A592B /* ZLTagListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDCE74D61BD69DD4009A592B /* ZLTagListView.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +55,12 @@
 		FDCE74B41BD67DE8009A592B /* TagListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TagListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCE74B81BD67DE8009A592B /* TagListUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagListUITests.m; sourceTree = "<group>"; };
 		FDCE74BA1BD67DE8009A592B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FDCE74C61BD67E1D009A592B /* ZLTagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLTagListView.h; sourceTree = "<group>"; };
-		FDCE74C71BD67E1D009A592B /* ZLTagListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLTagListView.m; sourceTree = "<group>"; };
-		FDCE74C91BD67E45009A592B /* ZLTagListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZLTagListView.xib; sourceTree = "<group>"; };
-		FDCE74CC1BD67EE4009A592B /* TagListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListViewCell.h; sourceTree = "<group>"; };
-		FDCE74CD1BD67EE4009A592B /* TagListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListViewCell.m; sourceTree = "<group>"; };
-		FDCE74CE1BD67EE4009A592B /* TagListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagListViewCell.xib; sourceTree = "<group>"; };
+		FDCE74D11BD69DD4009A592B /* TagListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListViewCell.h; sourceTree = "<group>"; };
+		FDCE74D21BD69DD4009A592B /* TagListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListViewCell.m; sourceTree = "<group>"; };
+		FDCE74D31BD69DD4009A592B /* TagListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagListViewCell.xib; sourceTree = "<group>"; };
+		FDCE74D41BD69DD4009A592B /* ZLTagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLTagListView.h; sourceTree = "<group>"; };
+		FDCE74D51BD69DD4009A592B /* ZLTagListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLTagListView.m; sourceTree = "<group>"; };
+		FDCE74D61BD69DD4009A592B /* ZLTagListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZLTagListView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,14 +154,14 @@
 		FDCE74CB1BD67EBD009A592B /* TagListView */ = {
 			isa = PBXGroup;
 			children = (
-				FDCE74C61BD67E1D009A592B /* ZLTagListView.h */,
-				FDCE74C71BD67E1D009A592B /* ZLTagListView.m */,
-				FDCE74C91BD67E45009A592B /* ZLTagListView.xib */,
-				FDCE74CC1BD67EE4009A592B /* TagListViewCell.h */,
-				FDCE74CD1BD67EE4009A592B /* TagListViewCell.m */,
-				FDCE74CE1BD67EE4009A592B /* TagListViewCell.xib */,
+				FDCE74D11BD69DD4009A592B /* TagListViewCell.h */,
+				FDCE74D21BD69DD4009A592B /* TagListViewCell.m */,
+				FDCE74D31BD69DD4009A592B /* TagListViewCell.xib */,
+				FDCE74D41BD69DD4009A592B /* ZLTagListView.h */,
+				FDCE74D51BD69DD4009A592B /* ZLTagListView.m */,
+				FDCE74D61BD69DD4009A592B /* ZLTagListView.xib */,
 			);
-			name = TagListView;
+			path = TagListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +270,8 @@
 				FDCE74A31BD67DE8009A592B /* LaunchScreen.storyboard in Resources */,
 				FDCE74A01BD67DE8009A592B /* Assets.xcassets in Resources */,
 				FDCE749E1BD67DE8009A592B /* Main.storyboard in Resources */,
-				FDCE74CA1BD67E45009A592B /* ZLTagListView.xib in Resources */,
-				FDCE74D01BD67EE4009A592B /* TagListViewCell.xib in Resources */,
+				FDCE74DA1BD69DD4009A592B /* ZLTagListView.xib in Resources */,
+				FDCE74D81BD69DD4009A592B /* TagListViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,8 +299,8 @@
 				FDCE749B1BD67DE8009A592B /* ViewController.m in Sources */,
 				FDCE74981BD67DE8009A592B /* AppDelegate.m in Sources */,
 				FDCE74951BD67DE8009A592B /* main.m in Sources */,
-				FDCE74CF1BD67EE4009A592B /* TagListViewCell.m in Sources */,
-				FDCE74C81BD67E1D009A592B /* ZLTagListView.m in Sources */,
+				FDCE74D71BD69DD4009A592B /* TagListViewCell.m in Sources */,
+				FDCE74D91BD69DD4009A592B /* ZLTagListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

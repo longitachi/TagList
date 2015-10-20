@@ -29,12 +29,18 @@
 
 - (void)createTagListView
 {
+    //初始坐标
     _tagListView = [[ZLTagListView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth - 40, 10) tagTitles:@"Foo,Tag Label 1,Tag Label 2"];
     _tagListView.center = self.view.center;
+    //自定义tag背景色
     _tagListView.tagBgColor = [UIColor colorWithRed:0.18 green:0.64 blue:0.37 alpha:1];
+    //自定义tag标题颜色
     _tagListView.tagTitleColor = [UIColor whiteColor];
+    //自定义tag字体大小
+    _tagListView.tagFontSize = 15.0f;
     
     typeof(ViewController) *weakSelf = self;
+    //实现点击方法
     [_tagListView setClickAction:^(NSString *title) {
         [weakSelf showAlertView:[NSString stringWithFormat:@"click %@", title]];
     }];
