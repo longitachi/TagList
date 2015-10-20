@@ -8,6 +8,8 @@
 
 ####效果图如下
 
+![image](https://github.com/longitachi/TagList/blob/master/效果图/TagList.gif)
+
 ####使用方法
 ```objc
 #import "ViewController.h"
