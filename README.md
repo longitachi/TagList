@@ -11,6 +11,7 @@
 ![image](https://github.com/longitachi/TagList/blob/master/效果图/TagList.gif)
 
 ####使用方法
+首先把TagViewList文件夹拖到您的项目中
 ```objc
 #import "ViewController.h"
 #import "ZLTagListView.h"
