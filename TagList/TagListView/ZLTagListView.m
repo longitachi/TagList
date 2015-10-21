@@ -17,23 +17,36 @@
 
 @implementation ZLTagListView
 
+//通过xib初始化
+- (void)awakeFromNib
+{
+    [self setDefaultValue];
+}
+
+//通过代码初始化
 - (instancetype)initWithFrame:(CGRect)frame tagTitles:(NSString *)title
 {
     self = [[[NSBundle mainBundle] loadNibNamed:@"ZLTagListView" owner:self options:nil] lastObject];
     if (self) {
         self.frame = frame;
-        
         _arrayTitles = [[NSMutableArray alloc] initWithArray:[self getFormatArrayWithTitle:title]];
-        
-        self.collectionView.backgroundColor = [UIColor clearColor];
-        [self.collectionView registerNib:[UINib nibWithNibName:@"TagListViewCell" bundle:nil] forCellWithReuseIdentifier:@"TagListViewCell"];
-        [self setNeedsDisplay];
+        [self setDefaultValue];
     }
     return self;
 }
 
+- (void)setDefaultValue
+{
+    self.isNeedLayoutSubViews = YES;
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TagListViewCell" bundle:nil] forCellWithReuseIdentifier:@"TagListViewCell"];
+}
+
 - (void)layoutSubviews
 {
+    if (!self.isNeedLayoutSubViews) {
+        return;
+    }
     CGSize contentSize = self.collectionView.contentSize;
     NSLog(@"self.frame:%@, collectionView.", NSStringFromCGRect(self.frame));
     if (self.frame.size.height < contentSize.height) {
@@ -69,12 +82,17 @@
     if (arr.count == 0) {
         return;
     }
+    NSMutableArray *deleteIndexPath = [NSMutableArray array];
     for (NSString *title in arr) {
         if ([_arrayTitles containsObject:title]) {
+            NSInteger index = [_arrayTitles indexOfObject:title];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+            [deleteIndexPath addObject:indexPath];
             [_arrayTitles removeObject:title];
         }
     }
-    [self.collectionView reloadData];
+    [self.collectionView deleteItemsAtIndexPaths:deleteIndexPath];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self layoutSubviews];
     });
@@ -114,6 +132,8 @@
     cell.labTitle.text = _arrayTitles[indexPath.row];
     cell.labTitle.textColor = self.tagTitleColor ? self.tagTitleColor : kDefaultTagTitleColor;
     cell.labTitle.backgroundColor = self.tagBgColor ? self.tagBgColor : kDefaultTagBgColor;
+    cell.labTitle.layer.borderColor = self.tagBorderColor ? self.tagBorderColor.CGColor : kDefaultTagBorderColor;
+    cell.labTitle.layer.borderWidth = self.tagBorderWidth ? self.tagBorderWidth : kDefaultTagBorderWidth;
     
     return cell;
 }
@@ -130,12 +150,12 @@
 {
     NSString *title = _arrayTitles[indexPath.row];
     CGSize size = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, 30) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:self.tagFontSize>0?self.tagFontSize+5:kDefaultFontSize+5]} context:nil].size;
-    if (size.width < 20) {
-        size.width = 20;
+    if (size.width < kMinWidth) {
+        size.width = kMinWidth;
     }
     
-    if (size.width > self.collectionView.frame.size.width - 10) {
-        size.width = self.collectionView.frame.size.width - 10;
+    if (size.width > self.collectionView.frame.size.width - 2*kLeftRightMargin) {
+        size.width = self.collectionView.frame.size.width - 2*kLeftRightMargin;
     }
     return size;
 }
@@ -144,7 +164,7 @@
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     // Override point for customization after application launch.
-    return UIEdgeInsetsMake(10, 5, 10, 5);
+    return UIEdgeInsetsMake(kTopBottomMargin, kLeftRightMargin, kTopBottomMargin, kLeftRightMargin);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section

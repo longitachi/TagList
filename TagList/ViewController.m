@@ -34,10 +34,16 @@
     _tagListView.center = self.view.center;
     //自定义tag背景色
     _tagListView.tagBgColor = [UIColor colorWithRed:0.18 green:0.64 blue:0.37 alpha:1];
+    //自定义tag边框颜色
+    _tagListView.tagBorderColor = [UIColor darkGrayColor];
+    //自定义tag边框宽度
+    _tagListView.tagBorderWidth = 1.0f;
     //自定义tag标题颜色
     _tagListView.tagTitleColor = [UIColor whiteColor];
     //自定义tag字体大小
     _tagListView.tagFontSize = 15.0f;
+    //设置是否需要重新布局
+    _tagListView.isNeedLayoutSubViews = YES;//default is Yes
     
     typeof(ViewController) *weakSelf = self;
     //实现点击方法
