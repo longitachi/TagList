@@ -47,6 +47,7 @@
     if (!self.isNeedLayoutSubViews) {
         return;
     }
+    [super layoutSubviews];
     CGSize contentSize = self.collectionView.contentSize;
     NSLog(@"self.frame:%@, collectionView.", NSStringFromCGRect(self.frame));
     if (self.frame.size.height < contentSize.height) {
